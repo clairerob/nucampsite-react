@@ -22,7 +22,7 @@ const AboutPage = () => {
                 </Col>
                 <Col sm='6'>
                     <Card>
-                        <CardHeader>
+                        <CardHeader className="bg-primary text-white">                        
                             <h3>Facts at a Glance</h3>
                         </CardHeader>
                         <CardBody>
