@@ -16,7 +16,7 @@ const Header = () => {
           <NavbarToggler onClick={() => setMenuOpen(!menuOpen)}/>
           <Collapse isOpen={menuOpen} navbar>
 
-            <Nav className='ms-auto' navbar>
+            <Nav className='ms-auto' navbar onClick={() => setMenuOpen(!menuOpen)}>
               <NavItem>
                 <NavLink className='nav-link' to='/'>
                   <i className='fa fa-home fa-lg' /> Home
