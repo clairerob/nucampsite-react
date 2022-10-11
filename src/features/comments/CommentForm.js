@@ -75,9 +75,9 @@ const CommentForm = ({ campsiteId }) => {
 									rows='12'
 									className='form-control'
 								/>
-								{/* <ErrorMessage name='commentText'>
+								<ErrorMessage name='commentText'>
 									{(msg) => <p>{msg}</p>}
-								</ErrorMessage> */}
+								</ErrorMessage>
 							</FormGroup>
 							<Button type='submit' color='primary'>
 								Submit
