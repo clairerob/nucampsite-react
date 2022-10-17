@@ -27,7 +27,6 @@ const UserLoginForm = () => {
 		};
 		dispatch(setCurrentUser(currentUser));
 		setLoginModalOpen(false);
-        console.log(currentUser);
 	};
 
 	return (
