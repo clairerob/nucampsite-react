@@ -11,12 +11,12 @@ export const fetchCampsites =  createAsyncThunk(
         //thunk creates and dispatches a new action to handle the rejection - we just need to set up a reducer to deal with that action later
         //the only error we need to deal with is if the server is up but cannot handle the request for some reason (400-ish?) so gives a response but it's an error not the data. .ok will return false in this case, so:
         if (!response) {
-            return Promise.reject('unable to fetch, status: ' + response);
+            return Promise.reject('unable to fetch, status: ' + response.status);
         }
         const data = await response.json();
         return data;
     }
-)
+)   
 
 const initialState = {
     campsitesArray: [],
@@ -56,5 +56,9 @@ export const selectCampsiteById = (id) => (state) => {
 };
 
 export const selectFeaturedCampsite = (state) => {
-    return state.campsites.campsitesArray.find(campsite => campsite.featured);
+    return {
+        featuredItem: state.campsites.campsitesArray.find(campsite => campsite.featured),
+        isLoading: state.campsites.isLoading,
+        errMsg: state.campsites.errMsg
+    };
 };
